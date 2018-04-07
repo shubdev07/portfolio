@@ -1057,11 +1057,11 @@ Animations styling
            margin-bottom: 2rem;
        }
        .header-text {
-           font-size: 2rem;
+           font-size: 1.85rem;
            font-weight: 700;
        }
        .header--sub-heading {
-           font-size: 3rem;
+           font-size: 2.8rem;
        }
        .sticky {
            padding: 0 1rem;
@@ -1126,12 +1126,12 @@ Animations styling
    }
      @media only screen and (max-width: 380px) {
         .header-text {
-              font-size: 1.8rem;
+              font-size: 1.7rem;
               font-weight: 700;
           }
 
         .header--sub-heading {
-              font-size: 2.8rem;
+              font-size: 2.6rem;
           }
         .about-me-text {
             width: 45%;
