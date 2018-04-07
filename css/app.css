@@ -631,7 +631,7 @@ About Section styling
 }
 
 .caremedico {
-    background: url('../img/caremedico.png') no-repeat center center;
+    background: url('../img/caremedico.jpg') no-repeat center center;
     background-size: cover;
 }
 
@@ -641,12 +641,12 @@ About Section styling
 }
 
 .iceAndFire {
-    background: url('../img/iceAndFire.png') no-repeat center center;
+    background: url('../img/iceAndFire.jpg') no-repeat center center;
     background-size: cover;
 }
 
 .epl {
-    background: url('../img/epl.png') no-repeat center center;
+    background: url('../img/epl.jpg') no-repeat center center;
     background-size: cover;
 }
 
@@ -722,7 +722,7 @@ About Section styling
     padding: 0rem 1.6rem;
     background: #333745;
     color: white;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-style: italic;
     padding-left: 1.6rem;
 }
