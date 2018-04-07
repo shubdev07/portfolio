@@ -1115,6 +1115,10 @@ Animations styling
          .contact .button {
             width:33%;
          }
+         .contact form {
+             width: 80%;
+             margin: -3rem auto 0rem auto;
+         }
 
    }
      @media only screen and (max-width: 380px) {
