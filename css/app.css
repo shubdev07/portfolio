@@ -1107,6 +1107,9 @@ Animations styling
         .contact-section {
             min-height: 69vh;
         }
+        .contact-form {
+            top: 34%;
+        }
         .section-wrapper {
             min-height: 69vh;
             -webkit-clip-path: polygon(50% 34%, 100% 2%, 100% 64%, 100% 100%, 0 100%, 0% 60%, 0 2%);
