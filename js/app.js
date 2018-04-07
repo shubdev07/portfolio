@@ -8,15 +8,7 @@ $(document).ready(function() {
     showCursor: true,
     cursorChar: "|"
   });
-
-  //   var waypoint = new Waypoint({
-  //     element: document.getElementById("px-offset-waypoint"),
-  //     handler: function(direction) {
-  //       notify("I am 20px from the top of the window");
-  //     },
-  //     offset: 20
-  //   });
-
+  // to add sticky class to navbar
   $(".js--about-container").waypoint(
     direction => {
       if (direction == "down") {
@@ -30,7 +22,7 @@ $(document).ready(function() {
     }
   );
 
-  /* Navigation scroll */
+  /* Navigation smooth scroll */
   $("a[href^='#']").on("click", function(e) {
     // prevent default anchor click behavior
     e.preventDefault();
@@ -52,29 +44,24 @@ $(document).ready(function() {
     );
   });
 
-  /* Animations on scroll */
-  /*   $(".js--wp-1").waypoint(
-    function(direction) {
-      $(".js--wp-1").addClass("animated fadeIn");
-    },
-    {
-      offset: "50%"
-    }
-  ); */
-
+  //   handle arrow click
   $(".arrows").click(function() {
     $("html, body").animate({ scrollTop: $("#about").offset().top }, 1000);
   });
 
+  //   adding animations to various sections --
+
+  // for skill bars
   $(".--skill-color-fill").waypoint(
     function(direction) {
       $(".--skill-color-fill").addClass("animated flash");
     },
     {
-      offset: "50%"
+      offset: "70%"
     }
   );
 
+  //   for more skills container
   $(".more-skills").waypoint(
     function(direction) {
       $(".more-skills").addClass("animated fadeInLeft");
@@ -84,6 +71,7 @@ $(document).ready(function() {
     }
   );
 
+  //   for project container
   $(".project-container").waypoint(
     function(direction) {
       $(".project-container").addClass("animated fadeInUp");
@@ -93,16 +81,18 @@ $(document).ready(function() {
     }
   );
 
+  //   for contact form
   $(".--js-contact-section").waypoint(
     function(direction) {
-      $(".--js-contact-section").addClass("animated fadeIn");
+      $(".--js-contact-section").addClass("animated fadeInUp");
     },
     {
       offset: "100%"
     }
   );
 
+  //   to handle mobile nav icon
   $(".mobile-nav-icon").click(function() {
     $(".nav-links").slideToggle(200);
   });
-});
+}); // end of ready function
