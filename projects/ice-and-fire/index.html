@@ -1,0 +1,43 @@
+<!doctype html>
+
+<html lang="" ng-app="myApp">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ICE AND FIRE</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+    <!-- <-- loading bootstrap framework -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+    <!-- loading my custom css file -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div ng-view>
+    </div>
+    <!-- Angular JS FILES -->
+    <script src=" https://code.angularjs.org/1.5.8/angular.js "></script>
+    <script src="https://code.angularjs.org/1.5.8/angular-route.js "></script>
+    <script type="text/javascript " src="assets/js/dirPaginate.js "></script>
+    <!-- loading angular components -->
+    <script type="text/javascript " src="angular/app.js "></script>
+    <script type="text/javascript " src="angular/components/route/route.js "></script>
+    <script src="angular/factories/loadAllData.factory.js "></script>
+    <script src="angular/factories/storeAllData.service.js "></script>
+    <!-- loading book components -->
+    <script src="angular/components/books/book.controller.js "></script>
+    <script src="angular/components/books/book.directive.js "></script>
+    <!-- loading characters components -->
+    <script src="angular/components/characters/characters.controller.js "></script>
+    <script src="angular/components/characters/character.directive.js "></script>
+    <!-- loading house components -->
+    <script src="angular/components/houses/houses.controller.js "></script>
+    <script src="angular/components/houses/house.directive.js "></script>
+</body>
+
+</html>

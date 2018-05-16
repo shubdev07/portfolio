@@ -1,0 +1,106 @@
+<div class="details-container">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#/">HOME</a>
+            <a class="navbar-brand" href="#/books">BOOKS</a>
+            <a class="navbar-brand" href="#/characters">CHARACTERS</a>
+            <a class="navbar-brand" href="#/houses">HOUSES</a>
+        </nav>
+    </div>
+    <!-- ng-show/ng-if is used to display a span/div only if it has content -->
+    <h2 class="heading-secondary">
+        Details about
+        <span>&nbsp;{{houseController.houses[count].name || 'Name Not Available'}} </span>
+    </h2>
+    <div class="book-row">
+        <div class="col-sm-6 details-col house-details-col">
+            <span ng-show="houseController.houses[count].region">
+                <span class="heading-tertiary">region: </span></span>
+            <span>&nbsp; {{houseController.houses[count].region}}
+            <br/> </span>
+            <span ng-show="houseController.houses[count].coatOfArms">
+            <span class="heading-tertiary">coat Of Arms:</span> {{houseController.houses[count].coatOfArms}}
+            <br/> </span>
+            <span ng-show="houseController.houses[count].words">
+            <span class="heading-tertiary">words: </span> {{houseController.houses[count].words}}
+            <br/> </span>
+            <span ng-show="houseController.houses[count].titles[0] !==''">
+               <span class="heading-tertiary ">Title(s): </span>
+            <ul ng-repeat="title in houseController.houses[count].titles ">
+                <li>{{title}}</li>
+            </ul>
+            </span>
+            <span ng-show="houseController.houses[count].seats[0] !==''">
+               <span class="heading-tertiary ">seats: </span>
+            <ul ng-repeat="alias in houseController.houses[count].seats ">
+                <li>{{alias}}</li>
+            </ul>
+            </span>
+            <span ng-show="houseController.houses[count].currentLord!==-1">
+            <span class="heading-tertiary">current Lord: </span>
+            <span>
+            {{houseController.characters[houseController.houses[count].currentLord].name}}
+            </span>
+            <br/>
+            </span>
+            <span ng-show="houseController.houses[count].heir!==-1">
+            <span class="heading-tertiary">heir: </span>
+            <span>
+            {{houseController.characters[houseController.houses[count].heir].name}}
+            </span>
+            <br/>
+            </span>
+            <span ng-show="houseController.houses[count].overlord!==-1">
+            <span class="heading-tertiary">Overlord: </span>
+            <span>
+            {{houseController.houses[houseController.houses[count].overlord].name}}
+            </span>
+            <br/>
+            </span>
+            <span ng-show="houseController.houses[count].founded">
+            <span class="heading-tertiary">founded: </span> {{houseController.houses[count].founded}}
+            <br/> </span>
+            <span ng-show="houseController.houses[count].founder!==-1">
+            <span class="heading-tertiary">founder: </span>
+            <span>
+            {{houseController.characters[houseController.houses[count].founder].name}}
+            </span>
+            <br/>
+            </span>
+            <span ng-show="houseController.houses[count].diedOut">
+            <span class="heading-tertiary">died Out: </span> {{houseController.houses[count].diedOut}}
+            <br/> </span>
+        </div>
+        <div class="col-sm-6 details-col house-details-1-col">
+            <h3 class="heading-tertiary " ng-show="houseController.houses[count].ancestralWeapons[0]!==''">ancestral Weapons</h3>
+            <ol>
+                <span ng-repeat="weapon in houseController.houses[count].ancestralWeapons">
+      <li ng-if="weapon "> {{weapon}} </li>
+      
+      </span>
+            </ol>
+            <h3 class="heading-tertiary " ng-show="houseController.houses[count].branchesIndex.length!==0 ">cadet Branches</h3>
+            <ol>
+                <span ng-repeat="index in houseController.houses[count].branchesIndex ">
+      <li ng-if="houseController.houses[index-1].name "> {{houseController.houses[index-1].name}} </li>
+      
+      </span>
+            </ol>
+            <h3 class="heading-tertiary " ng-show="houseController.houses[count].membersIndex.length!==0 ">sworn Members</h3>
+            <ol>
+                <span ng-repeat="index in houseController.houses[count].membersIndex ">
+      <li ng-if="houseController.characters[index-1].name "> {{houseController.characters[index-1].name}} </li>
+      
+      </span>
+            </ol>
+
+        </div>
+    </div>
+</div>
+<style>
+    .details-col li {
+        list-style: none;
+        margin-left: 5rem;
+    }
+
+</style>

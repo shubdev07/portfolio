@@ -1,0 +1,25 @@
+@media only screen and (max-width: 850px) {
+  .input-container {
+    justify-content: center;
+  }
+  .input-container input {
+    width: 100%;
+  }
+  .input-container input:last-child {
+    margin-bottom: 20px;
+  }
+}
+
+@media only screen and (max-width: 570px) {
+  .title,
+  .year {
+    text-align: center;
+  }
+  .main-detail-container {
+    text-align: center;
+    margin-top: 15px;
+  }
+  #back {
+    left: 34%;
+  }
+}

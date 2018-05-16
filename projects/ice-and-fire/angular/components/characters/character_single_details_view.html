@@ -1,0 +1,83 @@
+<!-- A view showing details for each character -->
+<div class="details-container">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#/">HOME</a>
+            <a class="navbar-brand" href="#/books">BOOKS</a>
+            <a class="navbar-brand" href="#/characters">CHARACTERS</a>
+            <a class="navbar-brand" href="#/houses">HOUSES</a>
+        </nav>
+    </div>
+    <!-- ng-show/ng-if is used to display a span/div only if it has content -->
+    <h2 class="heading-secondary">Details about
+        <span>&nbsp;{{characterController.characters[count].name || 'Name Not Available'}} </span>
+    </h2>
+    <div class="row">
+        <div class="col-sm-6 details-col character-details-col">
+            <span ng-show="characterController.characters[count].gender">
+         <span class="heading-tertiary">Gender: </span></span>
+            <span>&nbsp; {{characterController.characters[count].gender}}
+         <br/> </span>
+            <span ng-show="characterController.characters[count].culture">
+         <span class="heading-tertiary">Culture:</span> {{characterController.characters[count].culture}}
+            <br/> </span>
+            <span ng-show="characterController.characters[count].born">
+         <span class="heading-tertiary">Born: </span> {{characterController.characters[count].born}}
+            <br/> </span>
+            <span ng-show="characterController.characters[count].died">
+         <span class="heading-tertiary ">Died: </span> {{characterController.characters[count].died}}
+            <br/>
+            </span>
+            <span ng-show="characterController.characters[count].titles[0] !==''">
+            <span class="heading-tertiary ">Title(s): </span>
+            <ul ng-repeat="title in characterController.characters[count].titles ">
+                <li>{{title}}</li>
+            </ul>
+            </span>
+            <span ng-show="characterController.characters[count].aliases[0] !==''">
+            <span class="heading-tertiary ">Aliases: </span>
+            <ul ng-repeat="alias in characterController.characters[count].aliases ">
+                <li>{{alias}}</li>
+            </ul>
+            </span>
+            <span ng-show="characterController.characters[count].tvSeries[0] !==''">
+            <span class="heading-tertiary ">Tv series: </span>
+            <ul ng-repeat="tv in characterController.characters[count].tvSeries ">
+                <li>{{tv}}</li>
+            </ul>
+            </span>
+            <span ng-show="characterController.characters[count].playedBy[0] !==''">
+            <span class="heading-tertiary ">played by: </span>
+            <ul ng-repeat="playedBy in characterController.characters[count].playedBy ">
+                <li>{{playedBy}}</li>
+            </ul>
+            </span>
+        </div>
+        <div class="col-sm-6 details-col character-details-1-col">
+            <h3 class="heading-tertiary " ng-show="characterController.characters[count].housesIndex.length!==0 ">Allegiances</h3>
+            <ol>
+                <span ng-repeat="index in characterController.characters[count].housesIndex ">
+               <li ng-if="characterController.houses[index-1].name "> {{characterController.houses[index-1].name}} </li>
+            </span>
+            </ol>
+            <h3 class="heading-tertiary " ng-show="characterController.characters[count].booksIndex.length!==0 ">Books</h3>
+            <ol>
+                <span ng-repeat="index in characterController.characters[count].booksIndex ">
+               <li ng-if="characterController.books[index-1].name "> {{characterController.books[index-1].name}} </li>
+            </span>
+            </ol>
+            <h3 class="heading-tertiary " ng-show="characterController.characters[count].povBooksIndex.length!==0 ">POV books</h3>
+            <ol>
+                <span ng-repeat="index in characterController.characters[count].povBooksIndex ">
+               <li ng-if="characterController.books[index-1].name "> {{characterController.books[index-1].name}} </li>
+            </span>
+            </ol>
+        </div>
+    </div>
+</div>
+<style>
+    li {
+        margin-left: 5rem;
+    }
+
+</style>

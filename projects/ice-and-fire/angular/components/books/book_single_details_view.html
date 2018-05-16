@@ -1,0 +1,76 @@
+<!-- A view showing details for each book -->
+
+<div class="book-details-container">
+    <!-- the navbar -->
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#/">HOME</a>
+            <a class="navbar-brand" href="#/books">BOOKS</a>
+            <a class="navbar-brand" href="#/characters">CHARACTERS</a>
+            <a class="navbar-brand" href="#/houses">HOUSES</a>
+        </nav>
+    </div>
+    <h2 class="heading-secondary">Book Details for
+        <span>{{bookController.books[count].name}} </span>
+    </h2>
+
+    <div class="row">
+        <!-- ng-show/ng-if is used to display a span/div only if it has content -->
+        <div class="col-sm-6 details-col book-details-col">
+            <span ng-show="bookController.books[count].authors[0] !==''">
+
+                <span class="heading-tertiary ">author(s): </span>
+            <ol><span ng-repeat="author in bookController.books[count].authors "> 
+                <li>{{author}}</li>
+                </span>
+            </ol>
+
+            </span>
+            <span ng-show="bookController.books[count].publisher">
+                <span class="heading-tertiary">publisher: </span>
+            <span>&nbsp; {{bookController.books[count].publisher}}
+                <br/> </span></span>
+            <span ng-show="bookController.books[count].numberOfPages">
+                    <span class="heading-tertiary">number Of Pages: </span>
+            <span>&nbsp; {{bookController.books[count].numberOfPages}}
+                <br/> </span></span>
+            <span ng-show="bookController.books[count].country">
+                        <span class="heading-tertiary">country: </span>
+            <span>&nbsp; {{bookController.books[count].country}}
+                <br/> </span></span>
+            <span ng-show="bookController.books[count].mediaType">
+                            <span class="heading-tertiary">media Type: </span>
+            <span>&nbsp; {{bookController.books[count].mediaType}}
+                <br/> </span></span>
+            <span ng-show="bookController.books[count].released">
+                <span class="heading-tertiary">released: </span>
+            <span>&nbsp; {{bookController.books[count].released | date:'medium'}}
+                <br/> </span></span>
+            <span ng-show="bookController.books[count].isbn">
+                <span class="heading-tertiary">isbn: </span></span>
+            <span>&nbsp; {{bookController.books[count].isbn}}
+                                        <br/> </span>
+            <h3 class="heading-tertiary">pov Characters:</h3>
+            <ol>
+                <span ng-repeat="index in bookController.books[count].povCharactersIndex">
+                                            <li ng-if="bookController.characters[index-1].name"> {{bookController.characters[index-1].name}} </li>
+                                        </span>
+            </ol>
+        </div>
+        <div class="col-sm-6 details-1-col book-details-1-col">
+            <h3 class="heading-tertiary" ng-show="bookController.books[count].charactersIndex.length!==0 ">All Characters</h3>
+            <ol>
+                <span ng-repeat="index in bookController.books[count].charactersIndex">
+                    <li ng-if="bookController.characters[index-1].name"> {{bookController.characters[index-1].name}} </li>
+                </span>
+            </ol>
+        </div>
+    </div>
+</div>
+
+<style>
+    .book-details-container li {
+        margin-left: 5rem;
+    }
+
+</style>

@@ -1,0 +1,64 @@
+<!-- this is the template of the book directive -->
+<div class="book-table-container">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#/">HOME</a>
+            <a class="navbar-brand" href="#/books">BOOKS</a>
+            <a class="navbar-brand" href="#/characters">CHARACTERS</a>
+            <a class="navbar-brand" href="#/houses">HOUSES</a>
+        </nav>
+    </div>
+    <div class="row" style="margin-bottom:0; margin-left:0; margin-top:4.5rem">
+        <div class="col-sm-6" style="margin-bottom:0">
+            <div class="form__group">
+                <input type="text" class="form__input" placeholder="Search by Book Name" id="book" ng-model="bookName">
+                <label for="book" class="form__label">Search by Book Name</label>
+            </div>
+        </div>
+        <div class="col-sm-6" style="margin-bottom:0">
+            <div class="form__group">
+                <input type="text" class="form__input" placeholder="Search by Publisher Name" id="publisher" ng-model="publisherName">
+                <label for="Search by publisher" class="form__label">Publisher Name</label>
+            </div>
+        </div>
+    </div>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Book
+                    <a href="" ng-click="filter='name'; reverse = !reverse">
+                        <i class="fa fa-fw fa-sort" style="color: black"></i>
+                    </a>
+                </th>
+                <th scope="col">Author
+                </th>
+                <th scope="col">Publisher
+                    <a href="" ng-click="filter='publisher'; reverse = !reverse">
+                        <i class="fa fa-fw fa-sort" style="color: black"></i>
+                    </a>
+                </th>
+                <th scope="col">Details</th>
+            </tr>
+        </thead>
+        <div>
+            <tbody ng-repeat='book in bookController.books | filter:bookName | filter:publisherName | orderBy:filter:reverse'>
+                <tr>
+                    <td>{{book.name}}</td>
+                    <td>{{book.authors[0]}}</td>
+                    <td>{{book.publisher}}</td>
+                    <td>
+                        <a ng-href="#/bookDetails/{{book.index}}">Click here</a>
+                    </td>
+
+                </tr>
+            </tbody>
+        </div>
+    </table>
+</div>
+
+<style>
+    .book-table {
+        overflow-y: scroll;
+    }
+
+</style>

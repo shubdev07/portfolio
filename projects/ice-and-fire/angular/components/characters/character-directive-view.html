@@ -1,0 +1,64 @@
+<div class="character-table-container">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#/">HOME</a>
+            <a class="navbar-brand" href="#/books">BOOKS</a>
+            <a class="navbar-brand" href="#/characters">CHARACTERS</a>
+            <a class="navbar-brand" href="#/houses">HOUSES</a>
+        </nav>
+    </div>
+    <div class="row" style="margin-bottom:0; margin-left:0; margin-top:4.5rem">
+        <div class="col-sm-6" style="margin-bottom:0">
+            <div class="form__group">
+                <input type="text" class="form__input" placeholder="Search by Character Name" id="character" ng-model="characterName">
+                <label for="character" class="form__label">Search by Character Name</label>
+            </div>
+        </div>
+        <div class="col-sm-6" style="margin-bottom:0">
+            <div class="form__group">
+                <input type="text" class="form__input" placeholder="Search by Culture" id="culture" ng-model="culture">
+                <label for="culture" class="form__label">Search by Culture</label>
+            </div>
+        </div>
+    </div>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Name
+                    <a href="" ng-click="filter='name'; reverse = !reverse">
+                        <i class="fa fa-fw fa-sort" style="color: black"></i>
+                    </a>
+                </th>
+                <th>Gender</th>
+                <th>Culture
+                    <a href="" ng-click="filter='culture'; reverse = !reverse">
+                        <i class="fa fa-fw fa-sort" style="color: black"></i>
+                    </a>
+                </th>
+                <th>Details</th>
+            </tr>
+        </thead>
+        <div>
+            <tbody dir-paginate="character in characterController.characters | filter:characterName | filter:culture | orderBy:filter:!reverse | itemsPerPage: pageSize " current-page="currentPage">
+                <tr>
+                    <td>{{character.name || 'Not Available'}}</td>
+                    <td>{{character.gender}}</td>
+                    <td>{{character.culture || 'Not Available'}}</td>
+                    <td><a ng-href="#/characterDetails/{{character.index}}">Click here</a></td>
+
+                </tr>
+            </tbody>
+        </div>
+    </table>
+    <div>
+        <dir-pagination-controls template-url="assets/js/dirPagination.tpl.html"></dir-pagination-controls>
+    </div>
+
+</div>
+
+<style>
+    .pagination>li>a {
+        color: white;
+    }
+
+</style>
