@@ -455,8 +455,8 @@ About Section styling
 }
 
 .angular-fill {
-    width: 75%;
-    background-color: rgba(227, 27, 109, 0);
+    width: 80%;
+    /* background-color: rgba(227, 27, 109, 0); */
 }
 
 .react-fill {
