@@ -30,7 +30,7 @@ let getInfo = reset => {
   const title = $("#title").val();
   const year = $("#year").val();
   const id = $("#id").val();
-  let baseUrl = `http://www.omdbapi.com/?apikey=7880412f&page=${pageNo}`;
+  let baseUrl = `https://www.omdbapi.com/?apikey=7880412f&page=${pageNo}`;
   if (title) {
     baseUrl = `${baseUrl}&s=${title}`;
   }
@@ -107,7 +107,7 @@ let getInfo = reset => {
 
 //function to show details for a single item
 let getInfoById = id => {
-  let baseUrl = `http://www.omdbapi.com/?apikey=7880412f&i=${id}`;
+  let baseUrl = `https://www.omdbapi.com/?apikey=7880412f&i=${id}`;
   $.ajax({
     url: baseUrl,
     dataType: "json",
